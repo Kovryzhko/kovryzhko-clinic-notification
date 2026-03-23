@@ -4,6 +4,8 @@ import { SmsOptions, SmsProvider } from "../sms.interfaces";
 
 export class TestSmsProvider implements SmsProvider {
     public async sendSms(options: SmsOptions) {
-        if (!IS_PROD) { console.log(`sms to ${options.phone}: ${options.text}`); return }
+        // if (!IS_PROD) { console.log(`sms to ${options.phone}: ${options.text}`); return }
+        console.log(`sms to ${options.phone}: ${options.text}`)
+        return
     }
 }

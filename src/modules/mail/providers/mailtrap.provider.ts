@@ -10,8 +10,9 @@ export class MailtrapProvider implements MailProvider {
     ) { }
 
     public async sendMail(options: MailOptions) {
-        if (!IS_PROD) { console.log(`email to ${options.to}: ${options.text}`); return }
-
+        // if (!IS_PROD) { console.log(`email to ${options.to}: ${options.text}`); return }
+        console.log(`email to ${options.to}: ${options.text}`)
+        return
         return await this.client.send({
             from: {
                 email: this.config.get<string>('SMTP_FROM_ADDRES')!,

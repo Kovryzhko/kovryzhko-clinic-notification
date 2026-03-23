@@ -5,7 +5,18 @@ import { MailModule } from './modules/mail/mail.module';
 import { SmsModule } from './modules/sms/sms.module';
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true }), NotificationsModule, MailModule, SmsModule],
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: [
+        `.env.${process.env.NODE_ENV}.local`,
+        `.env.${process.env.NODE_ENV}`,
+        '.env'
+      ]
+    }),
+    NotificationsModule,
+    MailModule,
+    SmsModule],
   controllers: [],
   providers: [],
 })

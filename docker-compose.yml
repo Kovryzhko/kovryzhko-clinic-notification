@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+    notification-service:
+        image: kovryzhko-clinic/notification-service
+        container_name: notification-service
+        build:
+            context: ./
+            dockerfile: Dockerfile
+        restart: unless-stopped
+        env_file:
+            - .env.production.local
+        networks:
+            - kovryzhko-clinic
+
+networks:
+    kovryzhko-clinic:
+        external: true
