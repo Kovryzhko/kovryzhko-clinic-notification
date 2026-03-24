@@ -16,7 +16,8 @@ import { SmsModule } from './modules/sms/sms.module';
     }),
     NotificationsModule,
     MailModule,
-    SmsModule],
+    SmsModule,
+  ],
   controllers: [],
   providers: [],
 })
